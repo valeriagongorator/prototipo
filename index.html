@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Emprende Pasto - Vitrina Comunitaria</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS para el mapa interactivo de Pasto -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="navbar">
+        <div class="logo-container">
+            <i class="fa-solid fa-store logo-icon"></i>
+            <div>
+                <h1>Red Emprende Pasto</h1>
+                <p class="tagline">Conecta con lo nuestro • Economía Solidaria</p>
+            </div>
+        </div>
+        <button id="btn-audio" class="btn-audio" onclick="reproducirAudioGuia()">
+            <i class="fa-solid fa-volume-high"></i> <span class="audio-text">Escuchar Guía de Voz</span>
+        </button>
+    </header>
+
+    <!-- Navegación por pestañas -->
+    <nav class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('inicio', this)" aria-label="Ver categorías"><i class="fa-solid fa-grid-2"></i> Categorías</button>
+        <button class="tab-btn" onclick="switchTab('mapa', this)" aria-label="Ver mapa de Pasto"><i class="fa-solid fa-map-location-dot"></i> Mapa Pasto</button>
+        <button class="tab-btn" onclick="switchTab('rutas', this)" aria-label="Ver ruta del Carnaval"><i class="fa-solid fa-mask"></i> Ruta Carnaval</button>
+    </nav>
+
+    <!-- Pestaña 1: Inicio y Categorías -->
+    <main id="tab-inicio" class="tab-content active">
+        <section class="hero-card">
+            <h2>Comercio Local Directo y Sin Comisiones</h2>
+            <p>Apoya a los artesanos, cocineros y emprendedores de Pasto y sus corregimientos. Compras 100% directas vía WhatsApp.</p>
+        </section>
+
+        <section class="search-section">
+            <input type="search" id="searchInput" placeholder="Buscar por producto, artesano o barrio..." oninput="filtrarEmprendimientos()" aria-label="Buscar emprendimientos">
+        </section>
+
+        <section class="categories-bar">
+            <button class="cat-chip active" onclick="filtrarCategoria('todas', this)">Todas</button>
+            <button class="cat-chip" onclick="filtrarCategoria('Artesanías', this)">Artesanías</button>
+            <button class="cat-chip" onclick="filtrarCategoria('Gastronomía', this)">Gastronomía</button>
+            <button class="cat-chip" onclick="filtrarCategoria('Agroindustria', this)">Agroindustria</button>
+        </section>
+
+        <section class="grid-emprendimientos" id="gridEmprendimientos">
+            <!-- Se carga dinámicamente con JS -->
+        </section>
+    </main>
+
+    <!-- Pestaña 2: Mapa Georreferenciado -->
+    <main id="tab-mapa" class="tab-content">
+        <div class="map-header">
+            <h3>Mapa de Emprendedores de Pasto y Corregimientos</h3>
+            <p>Haz clic en los marcadores para ver la ubicación de cada taller o puesto tradicional.</p>
+        </div>
+        <div id="map"></div>
+    </main>
+
+    <!-- Pestaña 3: Ruta Carnaval y Cultura -->
+    <main id="tab-rutas" class="tab-content">
+        <section class="carnaval-banner">
+            <i class="fa-solid fa-masks-theater banner-icon"></i>
+            <div>
+                <h3>Ruta Turística Comercial - Carnaval de Negros y Blancos</h3>
+                <p>Descubre los talleres artesanales y cocinas comunitarias fuera del centro urbano durante las fiestas.</p>
+            </div>
+        </section>
+
+        <div class="rutas-list">
+            <article class="ruta-card">
+                <h4><i class="fa-solid fa-paint-brush"></i> Ruta Barniz de Pasto y Talla en Madera</h4>
+                <p><strong>Sectores:</strong> Barrio San Juan, Comuna 1 y Corregimiento de Catambuco.</p>
+                <p>Visita guiada a los maestros talleres de Mopa-Mopa y grabado en madera ancestral.</p>
+                <button class="btn-ruta" onclick="verEnMapa('artesanias')">Ver en el Mapa</button>
+            </article>
+
+            <article class="ruta-card">
+                <h4><i class="fa-solid fa-utensils"></i> Ruta Gastronómica de la Sabana</h4>
+                <p><strong>Sectores:</strong> Corregimientos de Obonuco, Genoy y San Fernando.</p>
+                <p>Platos típicos, empanadas de añejo y postres tradicionales elaborados por asociaciones de mujeres.</p>
+                <button class="btn-ruta" onclick="verEnMapa('gastronomia')">Ver en el Mapa</button>
+            </article>
+        </div>
+    </main>
+
+    <!-- Modal de Ficha Comercial del Emprendedor -->
+    <div id="modalEmprendedor" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="cerrarModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Script de Leaflet JS y Código Personalizado -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

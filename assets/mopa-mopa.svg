@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Artesanía decorada con barniz de Pasto Mopa-Mopa</title>
+  <desc id="desc">Ilustración de una caja de madera oscura decorada a mano con motivos florales inspirados en el barniz de Pasto.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#e7e2d3"/><stop offset="1" stop-color="#c9c2ac"/></linearGradient>
+    <linearGradient id="wood" x2="1" y2="1"><stop stop-color="#68452e"/><stop offset=".48" stop-color="#382b24"/><stop offset="1" stop-color="#725038"/></linearGradient>
+    <linearGradient id="lid" x2="0" y2="1"><stop stop-color="#74543b"/><stop offset="1" stop-color="#38271f"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-40%" width="160%" height="190%"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#30281f" flood-opacity=".28"/></filter>
+    <pattern id="grain" width="110" height="24" patternUnits="userSpaceOnUse"><path d="M0 8c25-9 55 9 110-3M-20 20c40-8 70 3 120-8" fill="none" stroke="#f0ca85" stroke-opacity=".12" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="1050" cy="105" r="185" fill="#f5edda" opacity=".42"/>
+  <path d="M0 560c180-42 294-8 460 20 188 32 436 33 740-39v179H0Z" fill="#b9b19c" opacity=".45"/>
+  <g filter="url(#shadow)" transform="translate(600 400)">
+    <ellipse cx="0" cy="170" rx="365" ry="52" fill="#483b30" opacity=".22"/>
+    <path d="M-325-78h650v234q-15 28-44 34h-562q-29-7-44-34Z" fill="url(#wood)" stroke="#281e19" stroke-width="10"/>
+    <path d="M-325-78h650v234q-15 28-44 34h-562q-29-7-44-34Z" fill="url(#grain)"/>
+    <path d="M-355-115q0-32 34-43l278-77q43-12 86 0l278 77q34 11 34 43v50h-710Z" fill="url(#lid)" stroke="#291f19" stroke-width="10"/>
+    <path d="M-322-95h644M-300 143h600" stroke="#d2a86d" stroke-width="5" opacity=".85"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 101V-41m0 78c-82 7-104-48-121-83m121 42c74 2 98-42 116-72" stroke="#a5c77e" stroke-width="9"/>
+      <path d="M-30-8c-42-45-80-36-91-6 34 19 66 18 91 6Zm70-35c25-43 64-47 84-22-18 31-49 43-84 22ZM-8 45c-41-23-71-9-76 20 33 11 59 3 76-20Zm23-14c37-33 72-24 82 4-28 21-58 20-82-4Z" fill="#b7cf8d" stroke="#6f8b54" stroke-width="5"/>
+      <path d="M-119-16q-22-37-7-60 41-2 55 33-13 28-48 27Zm218-30q7-43 40-52 30 27 17 58-27 17-57-6ZM-84 64q-6-39 22-55 34 16 30 48-23 22-52 7Zm170-12q31-30 62-17 12 35-14 54-32-3-48-37Z" fill="#e99b60" stroke="#b75f43" stroke-width="5"/>
+      <path d="M-119-16l-8-27m226-3 14-29m-97 150 4 34m-83-44-26 20m190-32 24 4" stroke="#f1d27f" stroke-width="7"/>
+      <circle cx="-79" cy="-42" r="7" fill="#f4d27d" stroke="none"/><circle cx="116" cy="-68" r="7" fill="#f4d27d" stroke="none"/><circle cx="-44" cy="49" r="7" fill="#f4d27d" stroke="none"/><circle cx="124" cy="30" r="7" fill="#f4d27d" stroke="none"/>
+    </g>
+    <path d="M-283-100h52m462 0h52" stroke="#e1ba77" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(70 78)"><rect width="224" height="42" rx="21" fill="#fffefa" opacity=".83"/><circle cx="24" cy="21" r="6" fill="#d97b50"/><text x="42" y="27" fill="#405b48" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.2">OFICIO DE PASTO</text></g>
+</svg>
